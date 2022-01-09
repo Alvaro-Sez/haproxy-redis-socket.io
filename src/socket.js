@@ -15,7 +15,7 @@ module.exports = function connectSocket({httpServer, Server, publisher, port}){
 
             publisher.publish('channel', JSON.stringify(data))
             
-            socket.emit('message', `Message: ${data.message} reported from server ${data.server} (not pubsubed)`)
+            io.sockets.emit('message', `Message: ${data.message} reported from server ${data.server} (not pubsubed)`)
         })
     })
 

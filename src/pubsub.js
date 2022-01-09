@@ -10,7 +10,7 @@ module.exports = function buildPubSub({io, sub, port}) {
         console.log(`Server ${port} received message: ${message}`)
 
         if(port!==data.server){
-            io.emit('message', `Message: ${data.message} reported from server ${data.port}`)
+            io.sockets.emit('message', `Message: ${data.message} reported from server ${data.server}`)
         }
     })
     
