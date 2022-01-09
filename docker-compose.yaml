@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  lb:
+    image: haproxy
+    ports:
+      - 8000:8000
+    volumes:
+      - C:/Users/Alvaro/Desktop/projectosBackend/socket-redis-pubsub/haproxy:/usr/local/etc/haproxy
+  app1:
+    image: pubsub
+    environment:
+      - APPID=4000
+  app2:
+    image: pubsub
+    environment:
+      - APPID=5000    
+  app3:
+    image: pubsub
+    environment:
+      - APPID=6000 
+  redis:
+    image: redis
