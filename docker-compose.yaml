@@ -6,7 +6,7 @@ services:
     ports:
       - 8000:8000
     volumes:
-      - C:/Users/Alvaro/Desktop/projectosBackend/socket-redis-pubsub/haproxy:/usr/local/etc/haproxy
+      - ./haproxy:/usr/local/etc/haproxy
   app1:
     image: pubsub
     environment:
